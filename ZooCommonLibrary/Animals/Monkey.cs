@@ -2,15 +2,19 @@
 
 namespace ZooCommonLibrary.Animals
 {
+    //Класс, помечен как Serializable, поскольку его можно сериализовать в бинарный файл
+    //!!Родительский класс так же должен быть помечен Serializable
+    [Serializable]
     //Конкретный экземпляр Animal, от которого далее нельзя отнаследоваться (sealed)
     public sealed class Monkey : Animal, ILiveInGroup<Monkey>, IPlaying
     {
         //Реализованное свойство из ILiveInGroup<T> интерфейса
         public List<Monkey> Neighbors { get; private set; }
 
+
         //Поскольку базовый конструктор Animal принимает только 3 параметра, необходимо определить конструтор Monkey, 
         //который так же принимает 2 параметра и вызывает базовый конструктор
-        public Monkey(string name, int weight) : base(name, weight, AnimalSpeciesEnum.Mammal)
+        public Monkey(string name, int weight, int age) : base(name, weight, age, AnimalSpeciesEnum.Mammal)
         {
             Neighbors = new List<Monkey>();
         }

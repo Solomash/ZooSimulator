@@ -12,8 +12,8 @@ namespace ZooProject.Application
         //Статический метод создания зоопарка. Вызываем просто от имени метода класса ZooBuilder
         public static ZooBuilding Create()
         {
-            var chackyMonkey = new Monkey("Chacky", 12);
-            var mickeyMonkey = new Monkey("Mickey", 14);
+            var chackyMonkey = new Monkey("Chacky", 12, 22);
+            var mickeyMonkey = new Monkey("Mickey", 14, 2);
             mickeyMonkey.AddNeighbor(chackyMonkey);
             chackyMonkey.AddNeighbor(mickeyMonkey);
             var monkeyCage = new Cage(1);

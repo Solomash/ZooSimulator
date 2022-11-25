@@ -1,5 +1,7 @@
 ﻿namespace ZooCommonLibrary.Animals
 {
+    //Родительский класс, помечен как Serializable, поскольку его можно сериализовать в бинарный файл
+    [Serializable]
     //Абстрактный класс всех зверей, в зоопарке есть только конкретные экземпляры
     public abstract class Animal
     {
@@ -7,7 +9,7 @@
         public int Weight { get; private set; }
         public string Name { get; private set; }
 
-        private int _age;
+        private int? _age;
 
         //Constant
         public const int legs = 4;
@@ -20,7 +22,7 @@
         {
             get
             {
-                return _age;
+                return _age.Value;
             }
             set
             {
@@ -31,12 +33,12 @@
         }
 
         //Конструктор для животных, у кого есть кличка
-        public Animal(string name, int weight, AnimalSpeciesEnum animalSpecies)
+        public Animal(string name, int weight, int age, AnimalSpeciesEnum animalSpecies)
         {
             Name = name;
             Weight = weight;
             AnimalSpecies = animalSpecies;
-            _age = 0;
+            Age = age;
         }
 
         //Конструктор для животных, у кого не может быть клички

@@ -8,7 +8,7 @@ namespace ZooCommonLibrary.Animals
         
         //Поскольку базовый конструктор Animal принимает только 3 параметра, необходимо определить конструтор Monkey, 
         //который так же принимает 2 параметра и вызывает базовый конструктор
-        public Racoon(string name, int weight) : base(name, weight, AnimalSpeciesEnum.Mammal)
+        public Racoon(string name, int weight, int age) : base(name, weight, age, AnimalSpeciesEnum.Mammal)
         {
         }
 
